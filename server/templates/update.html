@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+
+{%block title%}Hormonescall | Products {%endblock%}
+
+{%block content%}
+
+<div class="container text-center">
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for msg in messages%}
+    <p>
+      <div class="alert alert-success" role="alert">
+        {{msg}}
+      </div>
+    </p>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    <h1 class="text-center mt-5" style="font-weight: 700;">New Products</h1>
+    <p>
+        <form method="POST" action="{{ url_for('updateProducts') }}" class="border border-light p-3">
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+           <p>
+           <h5> {{ form.name.label }}</h5> {{ form.name(size=20, placeholder="product name", class="form-control mb-4") }}
+           </p>
+            <p>
+                <h5>{{ form.description.label }}</h5> {{ form.description(size=20, placeholder="products description", class="form-control mb-4") }}
+            </p>
+            <p>
+                <h5>{{ form.price.label }}</h5> {{ form.price(size=20, placeholder='$', class="form-control mb-4") }}
+            </p>
+            <p>
+                <h5>{{ form.image_url.label }} </h5>{{ form.image_url(size=20, placeholder='image link', class="form-control mb-4") }}
+            </p>
+            {{ form.submit(class='btn btn-success') }}
+        </form>
+    </p>
+</div>
+
+{%endblock%}

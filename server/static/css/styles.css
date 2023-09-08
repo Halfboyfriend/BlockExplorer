@@ -1,0 +1,401 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  background-color: #e8f0f7;
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-size: 18px;
+  color: #000;
+  overflow-x: hidden;
+}
+
+
+.header {
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.top-bar {
+  background-color: rgb(39, 44, 51);
+}
+
+.top-bar__content {
+  height: 30px;
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.icon {
+  margin-right: 3px;
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bottom-bar {
+  background-color: #115ccc;
+ 
+}
+
+.bottom-bar__content {
+  min-height: 60px;
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  vertical-align: middle;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.logo__img {
+  height: 45px;
+  border-radius: 30px;
+}
+
+.logo__text {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  color: #ffffffe7;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 40px;
+}
+
+
+.nav__link {
+  color: rgba(255, 255, 255, 0.75);
+  transition: all 0.2s;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+.btn {
+  color: #fff;
+  background-color: #0071e3;
+  padding: 8px 20px;
+  border-radius: 1000px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color:  rgb(28, 128, 228);
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  height: 2px;
+  width: 27px;
+  background-color: #fff;
+  margin: 5px 0;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav--open {
+  left: 50% !important;
+}
+
+.hamburger--open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+
+#landing__page {
+  background-image: url(../images/landing.jpg);
+  color: #fff;
+  background-repeat: no-repeat;
+  width: 100%;
+  
+  height: 75vh;
+}
+
+.landing__page__text {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  top: 50px;
+
+}
+#landing__page h1{
+  font-weight: 600;
+  margin-bottom: 20px;
+  
+}
+#landing__page p{
+  line-height: 2em;
+  margin-top: 10px;
+  font-size: 16px;
+}
+#landing__page #btn{
+  text-decoration: none;
+  color: #fff;
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+}
+
+
+#about__us, #contact__us{
+  transition: all 0.3s ease;
+  margin-top: 50px;
+
+}
+#about__us h3, #contact__us h3{
+  text-align: center;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#about__us p{
+  text-align: justify;
+
+}
+#about__us a{
+  color: #115ccc;
+
+  font-weight: 700;
+}
+#contact__us, #about__us{
+  max-width: 800px;
+}
+
+#products {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 5s;
+}
+ .show{
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 5s;
+}
+
+
+
+@media (max-width: 650px) {
+   
+  .nav {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    transform: translateX(-50%);
+    background-color: rgb(19, 22, 26);
+    width: 100%;
+    padding: 10px 0 25px;
+    z-index: 100000;
+  }
+
+  .nav__list {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .nav__link {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 11px;
+    padding: 7px 17px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  #landing__page h1{
+    font-weight: 800;
+    font-size: 30px;
+  }
+  #landing__page {
+    background-image: url(../images/landing.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .footer #footer__text{
+    font-size: 10px;
+  }
+  
+  
+  
+}
+
+@media (max-width: 360px) {
+  .top-bar__content {
+    font-size: 10px;
+  }
+}
+
+
+@media (min-width: 700px){
+  #landing__page p{
+    font-size: 20px;
+  }
+}
+
+
+footer{
+  margin-top: 70px;
+  text-align: center;
+  background-color: #115ccc;
+  padding: 20px 40px;
+  color: #fff;
+}
+
+.footer{
+  margin: auto;
+  max-width: 800px;
+}
+
+
+
+.footer a{
+  text-decoration: none;
+  color: #fff;
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 25px;
+  padding: 10px 15px;
+  margin-top: 15px; 
+}
+
+.footer h3{
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.footer #footer__text{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.footer p{
+  margin-top: 40px;
+}
+
+
+section {
+  transition: transform 0.5s ease;
+ 
+}
+
+.section-animation {
+  transform: translateX(0);
+}
+.section-animation {
+  opacity: 1;
+  transform: scale(1);
+}
+
+section {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.home-testimonial {
+  position: relative; 
+  padding-top: 40px;
+  background-color: #0071e3; 
+}
+
+.home-testimonial-bottom {
+  padding-bottom: 100px; 
+}
+
+.tour-item {
+  background-color: #fff; 
+  padding: 20px; 
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+.tm-people {
+  margin-top: 20px;
+  width: 65px;
+  height: 35px;
+  border-radius: 50%;
+  -object-fit: cover;
+}
+

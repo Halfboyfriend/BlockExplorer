@@ -1,0 +1,72 @@
+{%extends "base.html"%}
+
+{%block title%}Hormonescall | Products {%endblock%}
+
+{%block content%}
+
+    <div class="container" id="products" >
+      <form action="{{url_for('search')}}" method="get" class="mt-5 m-auto" style="max-width: 300px;">
+        <input type="text" placeholder="Search for products" name="search" class="form-control" required>
+        <button class="btn btn-primary mt-3">Search</button>
+      </form>
+      <h3 class="m-5"
+        style="
+          color: orange;
+          margin-top: 20px;
+          text-align: center;
+          font-weight: 700;
+        "
+      >
+        PRODUCTS
+      </h3>
+
+      <div id="products__text">
+        <div class="row">
+
+          {%for product in products %}
+          <div class="col-lg-6 mb-3 mb-sm-0">
+            <div class="card m-auto mb-4" style="width: 20rem">
+              <img src={{product.image_url}} class="card-img-top" alt="..." style="width: 100%; height: 25vh;" />
+              <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">
+                {{product.description}}
+                </p>
+                
+                <button class="openChatButton btn btn-primary" data-auto-message="Hello! Pharmacareglobal, I want to pruchase {{product.name}} for the price of ${{product.price}}, please kindly drop payment details, THANKS">Buy for ${{product.price}}</button>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+          
+
+         
+
+          
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      // Function to open the Tawk.to chat widget
+      function openTawkToChat() {
+          if (typeof Tawk_API !== 'undefined') {
+              // Use Tawk_API methods to control the chat widget
+              Tawk_API.toggle();
+              
+          }
+      }
+  
+      var buttons = document.getElementsByClassName("openChatButton");
+
+      // Attach the function to each button's click event
+      for (var i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener("click", openTawkToChat);
+      }
+  </script>
+ 
+
+{%endblock%}
+
